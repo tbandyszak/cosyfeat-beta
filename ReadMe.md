@@ -15,7 +15,7 @@ An executable .jar file of the tool can be found in the folder "download-executa
 
 The following libraries have been used:
 - JGraphX (https://github.com/jgraph/jgraphx) for graphical modeling
-- LogicNG (https://github.com/logic-ng/LogicNG) creating Boolean formulas and SAT solving
+- LogicNG (https://github.com/logic-ng/LogicNG) for creating Boolean formulas and SAT solving
 - Apache Commons Lang (https://commons.apache.org/proper/commons-lang/)
 
 <h2>OLD</h2>
