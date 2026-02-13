@@ -1,5 +1,9 @@
 <h1>Welcome to CoSyFeAT (Collaborative Systems Feature Analysis Tool)!</h1>
 <h2>About</h2>
+
+CoSyFeAT is a tool that has been developed to support the early phases of engineering collaborative systems, i.e., systems that dynamically form collaborations to achieve emergent capabilities that go beyond the individual capabilities of the involved systems. CoSyFeAT allows modelling and analyzing the functional interplay of candidate architectures of collaborative system groups. The tool offers a graphical user interface to create context feature models that are used to model types of collaborative systems and their capabilities, as well as the desired capabilities to be achieved by the collaboration. CoSyFeAT enables the automated instantiation of collaborative system instances as Boolean formulas that can be checked for satisfiability.
+
+
 This Tool was developed to check 
 collaboration-related uncertainties on 
 context feature models.
