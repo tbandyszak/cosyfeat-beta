@@ -27,7 +27,9 @@ A project in CoSyFeAT consists of a set of System Type Feature Models (STFMS) an
 
 To specify the kind of feature decomposition, please right-click the edge that has been automatically generated for each new created subfeature, and select "Change edge". You can specify the type of the entire feature group decomposition (e.g., XOR decomposition) there. Requires and excludes links can be drawn by clicking in the middle of a feature (on the label) and holding to draw a line to the desired target feature. Again, you can specify the kind of dependency (requires or exclude) by right-clicking the link and selecting "Change Edge". For requires links this will open up a pop-up menu in which you can specify cardinality constraint attached to the requires dependency. Please enter only natural numbers larger than zero there.
 
-To run an analysis, you have to specify the number of systems for each STFM. To do so, right-click the respective STFM and select "Number of instances". You can enter a number larger than zero there. Once you specified all the numbers, you can generate the Boolean formula and check it for satisfiability by pressing the button "check" on the bottom right-hand side of the tool window. The output is displayed on the bottom left-hand side. 
+To run an analysis, you have to specify the number of systems for each STFM. To do so, right-click the respective STFM and select "Number of instances". You can enter a number larger than zero there. Once you specified all the numbers, you can generate the Boolean formula and check it for satisfiability by pressing the button "check" on the bottom right-hand side of the tool window. The output is displayed on the bottom left-hand side.
+
+You can save your project by selecting "Save" from the "File" menu. CoSyFeAT saves the project as a png file, which can then also be loaded again into the tool. The "Edit" menu item also allows you to undo and redo changes to the project.
 
 <h2>Used Libraries</h2>
 
