@@ -1,0 +1,22 @@
+Welcome to FeatureMC!
+
+About
+_________________________________
+This Tool was developed to check
+collaboration-related uncertainties on
+context feature models.
+With the help of the user interface it is possible to create a model.
+The developed tool then translates the Model into Java Objects.
+After that the feature models and the constraints are translated into a
+Boolean formula with the Java Library LogicNG.
+Afterwards LogicNG checks the validity of the Boolean formula.
+
+How to Use
+________________________________
+After you have created a new project, it is possible to create a model.
+Alternatively, an existing model can also be loaded.
+After the model is finished, the model can be checked with the help of the "Check" button.
+After that the tool will check the models and the constraints.
+You can see then the Boolean formula and its result in the console.
+If the models and the constraints are valid the tool shows TRUE,
+if not the tool shows FALSE.
