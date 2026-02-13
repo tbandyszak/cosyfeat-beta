@@ -1,0 +1,188 @@
+<?xml version="1.0"encoding="utf-8"?>
+<featureMC>
+    <featuremodel type="type" id="1" >
+        <context>
+            <and name="Collaborative Context" >
+                <feature name="Drop Off at 70 cm" relation="optional" />
+                <feature name="Drop Off at 1 m " relation="optional" />
+                <feature name="Pick Up at 70 cm" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <alt name="Lathe" >
+                <feature name="Turning" />
+                <feature name="Drilling" />
+            </alt>
+        </system>
+    </featuremodel>
+
+    <featuremodel type="type" id="2" >
+        <context>
+            <and name="Collaborative Context" >
+                <feature name="Drop-Off Height 70 cm" relation="optional" />
+                <feature name="Drop-Off Height 50 cm" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <and name="Transport Robot" >
+                <alt name="Pick-Up Height" relation="mandatory" >
+                    <feature name="Pick Up at 50 cm" />
+                    <feature name="Pick Up at 70 cm" />
+                    <feature name="Pick Up at 1 m" />
+                </alt>
+                <alt name="Drop-Off Height" relation="mandatory" >
+                    <feature name="Drop Off at 50 cm" />
+                    <feature name="Drop Off at 70 cm" />
+                    <feature name="Drop Off at 1 m" />
+                </alt>
+            </and>
+        </system>
+    </featuremodel>
+
+    <featuremodel type="type" id="3" >
+        <context>
+            <and name="Collaborative Context" >
+                <feature name="Drop Off at 50 cm" relation="optional" />
+                <feature name="Pick Up at 70 cm" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <alt name="Milling Machine" >
+                <feature name="Milling" />
+                <feature name="Drilling" />
+                <feature name="Screw Thread Tapping" />
+            </alt>
+        </system>
+    </featuremodel>
+
+    <featuremodel type="type" id="4" >
+        <context>
+            <and name="Collaborative Context" >
+                <feature name="Drop Off at 70 cm" relation="optional" />
+                <feature name="Drop Off at 50 cm" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <alt name="Drop-Off-Station" >
+                <feature name="Drop-Off Height 50 cm" />
+                <feature name="Drop-Off Height 70 cm" />
+            </alt>
+        </system>
+    </featuremodel>
+
+    <featuremodel type="type" id="5" >
+        <context>
+            <and name="Collaborative Context" >
+                <feature name="Drop-Off Height 70 cm" relation="optional" />
+                <feature name="Pick Up at 1m" relation="optional" />
+                <feature name="Drop Off at 1 m" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <and name="Crane" >
+                <or name="Pick-Up Height" >
+                    <feature name="Pick Up at 1 m" />
+                    <feature name="Pick Up at 70 cm" />
+                </or>
+                <or name="Drop-Off Height" >
+                    <feature name="Drop Off at 70 cm" />
+                    <feature name="Drop Off at 1 m" />
+                </or>
+            </and>
+        </system>
+    </featuremodel>
+
+    <featuremodel type="type" id="6" >
+        <context>
+            <and name="Collaborative Context" >
+                <feature name="Drop-Off Height 70 cm" relation="optional" />
+                <feature name="Drop-Off Height 50 cm" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <and name="Conveyor Belt" >
+                <or name="Pick-Up Height" >
+                    <feature name="Pick Up at 50 cm" />
+                    <feature name="Pick Up at 70 cm" />
+                </or>
+                <alt name="Drop-Off Height" >
+                    <feature name="Drop Off at 70 cm" />
+                    <feature name="Drop Off at 50 cm" />
+                </alt>
+            </and>
+        </system>
+    </featuremodel>
+
+    <featuremodel type="type" id="7" >
+        <context>
+            <and name="Collaborative Context" >
+                <feature name="Pick Up at 70 cm" relation="optional" />
+                <feature name="Pick Up at 1 m" relation="optional" />
+                <feature name="Drop Off at 50 cm" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <or name="Polishing Machine" >
+                <feature name="Polishing" />
+                <feature name="Drilling" />
+            </or>
+        </system>
+    </featuremodel>
+
+    <featuremodel type="group" id="8" >
+        <and name="Smart Factory" >
+            <and name="Manufacture Products" relation="mandatory" >
+                <feature name="Product A" relation="mandatory" />
+                <feature name="Product B" relation="mandatory" />
+                <feature name="Product C" relation="mandatory" />
+            </and>
+        </and>
+    </featuremodel>
+
+    <constraint>
+
+        <requires sourceid="8" sourcetype="group" source="Product A" targetid="1" targettype="system" target="Drilling" cardinality="1..*" />
+        <requires sourceid="8" sourcetype="group" source="Product A" targetid="3" targettype="system" target="Milling" cardinality="1..*" />
+        <requires sourceid="8" sourcetype="group" source="Product A" targetid="4" targettype="system" target="Drop-Off Height 70 cm" cardinality="1..*" />
+        <requires sourceid="8" sourcetype="group" source="Product B" targetid="1" targettype="system" target="Turning" cardinality="1..*" />
+        <requires sourceid="8" sourcetype="group" source="Product B" targetid="4" targettype="system" target="Drop-Off Height 50 cm" cardinality="1..*" />
+        <requires sourceid="8" sourcetype="group" source="Product C" targetid="1" targettype="system" target="Drilling" cardinality="1..*" />
+        <requires sourceid="8" sourcetype="group" source="Product C" targetid="7" targettype="system" target="Polishing" cardinality="1..*" />
+
+        <requires sourceid="1" sourcetype="system" source="Turning" targetid="1" targettype="context" target="Pick Up at 70 cm" cardinality="1..*" />
+        <requires sourceid="1" sourcetype="system" source="Turning" targetid="1" targettype="context" target="Drop Off at 1 m" cardinality="1..*" />
+        <requires sourceid="1" sourcetype="system" source="Drilling" targetid="1" targettype="context" target="Drop Off at 70 cm" cardinality="1..*" />
+
+        <requires sourceid="2" sourcetype="system" source="Drop Off at 50 cm" targetid="2" targettype="context" target="Drop-Off Height 50 cm" cardinality="1..*" />
+        <requires sourceid="2" sourcetype="system" source="Drop Off at 70 cm" targetid="2" targettype="context" target="Drop-Off Height 70 cm" cardinality="1..*" />
+        <requires sourceid="2" sourcetype="system" source="Drop Off at 1 m" targetid="2" targettype="context" target="Drop-Off Height 70 cm" cardinality="1..*" />
+        <excludes sourceid="2" sourcetype="system" source="Drop Off at 50 cm"  targetid="2" targettype="system" target="Pick Up at 1 m"/>
+
+        <requires sourceid="3" sourcetype="system" source="Milling" targetid="3" targettype="context" target="Drop Off at 50 cm" cardinality="1..*" />
+        <requires sourceid="3" sourcetype="system" source="Milling" targetid="3" targettype="context" target="Pick Up at 70 cm" cardinality="1..*" />
+        <requires sourceid="3" sourcetype="system" source="Drilling" targetid="3" targettype="context" target="Drop Off at 50 cm" cardinality="1..*" />
+
+        <requires sourceid="4" sourcetype="system" source="Drop-Off Height 50 cm" targetid="4" targettype="context" target="Drop Off at 50 cm" cardinality="1..*" />
+        <requires sourceid="4" sourcetype="system" source="Drop-Off Height 70 cm" targetid="4" targettype="context" target="Drop Off at 70 cm" cardinality="1..*" />
+
+        <requires sourceid="5" sourcetype="system" source="Drop Off at 70 cm" targetid="5" targettype="context" target="Drop-Off Height 70 cm" cardinality="1..*" />
+        <requires sourceid="5" sourcetype="system" source="Drop Off at 1 m" targetid="5" targettype="context" target="Drop-Off Height 70 cm" cardinality="1..*" />
+        <excludes sourceid="5" sourcetype="system" source="Pick Up at 1 m"  targetid="5" targettype="context" target="Pick Up at 1 m"/>
+        <excludes sourceid="5" sourcetype="system" source="Drop Off at 1 m"  targetid="5" targettype="context" target="Drop Off at 1 m"/>
+
+        <requires sourceid="6" sourcetype="system" source="Drop Off at 50 cm" targetid="6" targettype="context" target="Drop-Off Height 50 cm" cardinality="1..*" />
+        <requires sourceid="6" sourcetype="system" source="Drop Off at 70 cm" targetid="6" targettype="context" target="Drop-Off Height 70 cm" cardinality="1..*" />
+        <excludes sourceid="6" sourcetype="system" source="Drop Off at 50 cm"  targetid="6" targettype="system" target="Pick Up at 70 cm"/>
+
+        <requires sourceid="7" sourcetype="system" source="Polishing" targetid="7" targettype="context" target="Pick Up at 1 m" cardinality="1..*" />
+        <requires sourceid="7" sourcetype="system" source="Polishing" targetid="7" targettype="context" target="Drop Off at 50 cm" cardinality="1..*" />
+        <requires sourceid="7" sourcetype="system" source="Drilling" targetid="7" targettype="context" target="Pick Up at 70 cm" cardinality="1..*" />
+        <requires sourceid="7" sourcetype="system" source="Drilling" targetid="7" targettype="context" target="Drop Off at 50 cm" cardinality="1..*" />
+
+    </constraint>
+</featureMC>
+
+
+
+
+

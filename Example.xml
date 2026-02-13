@@ -1,0 +1,48 @@
+<?xml version="1.0"encoding="utf-8"?>
+<featureMC>
+    <featuremodel type="type" id="1" >
+        <context>
+            <and name="Context" >
+                <feature name="a" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <alt name="CES" >
+                <feature name="a" />
+                <feature name="b" />
+            </alt>
+        </system>
+    </featuremodel>
+    <featuremodel type="type" id="2" >
+        <context>
+            <and name="Context" >
+                <feature name="a" relation="optional" />
+            </and>
+        </context>
+        <system instances="2">
+            <alt name="F" >
+                <feature name="a" />
+                <feature name="b" />
+            </alt>
+        </system>
+    </featuremodel>
+
+    <featuremodel type="group" id="4" >
+        <and name="CSG" >
+            <and name="CSF" relation="mandatory" >
+                <feature name="c" relation="mandatory" />
+            </and>
+            <and name="ISF" relation="mandatory" >
+                <feature name="a" relation="mandatory" />
+            </and>
+        </and>
+    </featuremodel>
+    <constraint>
+        <requires sourceid="1" sourcetype="system" source="b" targetid="1" targettype="context" target="a" cardinality="1..*"/>
+    </constraint>
+</featureMC>
+
+
+
+
+
