@@ -7,6 +7,12 @@ CoSyFeAT is a tool that has been developed to support the early phases of engine
 
 This tool requires Java 8.
 
+<h2>Run the Tool</h2>
+
+An executable .jar file of the tool can be found in the folder "executable". Please download it and run it.
+
+<h2>Used Libraries</h2>
+
 The following libraries have been used:
 - JGraphX (https://github.com/jgraph/jgraphx) for graphical modeling
 - LogicNG (https://github.com/logic-ng/LogicNG) creating Boolean formulas and SAT solving
