@@ -11,6 +11,10 @@ This tool requires Java 8.
 
 An executable .jar file of the tool can be found in the folder "download-executable". Example models created using the tool can be found here. This includes models from the case studies presented in our corresponding ICSA 2026 paper.
 
+<h2>Features</h2>
+
+CoSyFeAT provides a graphical user interface with a modeling editor for creating type-level feature models (for explantion see our ICSA paper - Link follows after publication). As input for instantiation, the numbers of instances of the specified system types are specified directly in the models as root feature attributes. CoSyFeAT allows automatically instantiating collaborations and check them against the desired collaboration features.
+
 <h2>Used Libraries</h2>
 
 The following libraries have been used:
