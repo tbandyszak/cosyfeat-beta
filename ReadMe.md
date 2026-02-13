@@ -9,7 +9,7 @@ This tool requires Java 8.
 
 <h2>Run the Tool</h2>
 
-An executable .jar file of the tool can be found in the folder "executable". Please download it and run it.
+An executable .jar file of the tool can be found in the folder "download-executable". Example models created using the tool can be found here. This includes models from the case studies presented in our corresponding ICSA 2026 paper.
 
 <h2>Used Libraries</h2>
 
