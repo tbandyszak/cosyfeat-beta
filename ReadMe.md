@@ -13,7 +13,7 @@ The tool is aimed to support requirements engineers who are familiar with featur
 
 <h2>Run the Tool</h2>
 
-An executable .jar file of the tool can be found in the folder "download-executable". 
+An executable .jar file of the tool can be found in the folder "download-executable". Download the file to your computer and open the file. Depending on your OS, simply use double click, or command line prompt to execute the jar file: java -jar download-executable/CoSyFeAT.jar
 
 <h2>Key Features</h2>
 
@@ -37,6 +37,4 @@ The following libraries have been used:
 - JGraphX (https://github.com/jgraph/jgraphx) for graphical modeling
 - LogicNG (https://github.com/logic-ng/LogicNG) for creating Boolean formulas and SAT solving
 - Apache Commons Lang (https://commons.apache.org/proper/commons-lang/)
-
- 
 
